@@ -1,0 +1,47 @@
+for Basic HTML Practise we will use : https://codepen.io/pen/
+
+ECMAScript
+ECMAScript is a language specification standardized by European Computer Manufacturers Association(ECMA).
+
+All major JavaScript implementations adhere to the ECMAScript standard.
+
+ECMAScript Defines
+
+Language Syntax – parsing rules, keywords, statements, declarations, operators, etc.
+Types – boolean, number, string, object, etc.
+Prototypes and Inheritance
+Standard Library of built-in objects and functions
+
+Creating complex strings
+Creating multiline strings no longer requires Backslash n (\n)
+
+Creating a multiline string in JS:
+
+let bio = "Wendy Harper \n Software Engineer - TCS \n 3 Years in Web development"
+Creating the same in ES6
+
+let bio = `Wendy Harper
+           Software Engineer - TCS
+           3 Years in Web development` 
+
+ES6
+ECMAScript6 or ES6 is the sixth edition of the ECMA script Language specification standard.
+
+TC39, is the committee that drafts the ECMAScript specifications. 
+They follow a yearly model for defining new standards, where new features are added as they are approved, 
+rather than waiting till all features are ready. 
+Thus ES7 will contain all features proposed and approved in 2016.
+
+Look Out!
+As a part of this ECMAScript 6 course, we'll be exploring:
+
+Block scope (let and const)
+Default, Rest and Spread parameters
+Destructuring
+Arrow Functions
+Template Literals
+ClassesandModules
+Promise
+Maps and Sets
+Symbols
+Transpiling

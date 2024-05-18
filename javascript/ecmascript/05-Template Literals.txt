@@ -1,0 +1,63 @@
+Template Literals
+
+Template string makes it easy to create strings that are longer and have lot of dynamic content (variables) with exact amount of spaces, line breaks and indentation.
+
+Template literals allows to:
+
+Create complex strings easily.
+Evaluate an expression in templates.
+Build complex html and xml templates (template functions).
+Instead of single quotes or double quotes, ES6 uses BACKTICK or OPENQUOTE ( " ` " ) character to create template literals.
+
+Evaluating Expressions
+The literal is delimited by backticks and the interpolated expressions inside the literal are delimited by ${ variable }.
+
+Template literals always produce strings.
+
+Example of interpolation of Expressions:
+
+let fN = `Wendy`;
+let lN = `Harper`;
+console.log(`My name is ${fN} ${lN}`);  
+Alternatively we can also use more complex object.
+
+let person = {
+    fN: `Wendy`,
+    lN: `Harper`,
+    name: function() {
+        return `My name is ${this.fN} ${this.lN}`;
+    }
+};
+person.name();
+Output in both cases would be: My name is Wendy Harper
+
+
+Creating HTML Templates
+Without using any templating libraries such as moustache or handlebars, we can create templates using template literals, which can be reused.
+
+const wendy = {  "id": 1,
+                 "firstName": "Wendy", 
+                 "lastName":  "Harper",
+                 "city":      "Tulsa"
+            }
+
+function bio(person) {
+return `<p>
+    <h1>
+        <span>${person.firstName}</span>
+        <span>${person.lastName}</span>
+     </h1>
+        <address>${person.city}</address>
+    </p>`
+}
+bio(wendy)
+Output:
+
+ <p>
+    <h1>
+        <span>Wendy</span>
+        <span>Harper</span>
+    </h1>
+    <address>Tulsa</address>
+</p>
+

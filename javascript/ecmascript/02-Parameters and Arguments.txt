@@ -1,0 +1,123 @@
+Parameters and Arguments
+
+Parameters (or formal parameters) are given in the function declaration, whereas Arguments (or actual parameters) are passed to the function.
+
+Example:
+
+function foo(a,b) { 
+       //do something 
+}
+foo (10,20);
+In this function, a and b are parameters, while 10 and 20 are the arguments.
+
+ES6 offers 3 types of parameters and we will learn about them in this module.
+
+Default Parameters
+Default parameters are the parameters with an initialised value.
+
+Invoking a function without passing any arguments, would assume default values and process the request.
+
+Example in JavaScript
+
+function foo(a, b) {
+    console.log(a, b);
+}        
+foo();           // undefined undefined
+foo(5, 10)  // 5 10
+Example in ES6:
+
+function foo(a = 10, b = 20) {
+    console.log(a, b);
+}
+foo();            // 10 20
+foo(5, 10);  // 5 10
+
+Rest Parameter
+Rest allows indefinite number of parameters in one single array. Notation ...<paramname> is used to define Rest Parameter.
+
+Example in JavaScript
+
+function sum() {
+var args = Array.prototype.slice.call(arguments);
+// converts args to array
+var result = 0;
+args.forEach(function (args) {
+result += args;
+} );
+return result;
+}
+Example in ES6
+
+//args is rest parameter
+function sum(...args) {
+    var result = 0;
+    args.forEach(function(args) { result += args; } )
+    return result;
+}
+let [x,y,z] = [1, 2, 3];
+let add = sum(x, y, z);
+console.log(add);  // output: 6
+
+Spread Operator
+Spread Operator ( ...) is used to spread an array elements into parameters.
+
+Usage in code: ...array_variable_name
+
+Example in Javascript
+
+function sum(x, y, z) {
+ return x+y+z;
+}
+let args = [1, 2, 3];
+let add = sum.apply(null, args); 
+console.log(add);
+Example in ES6
+
+function sum(x, y, z) {
+ return x+y+z;
+}
+let args = [1, 2, 3];
+let add = sum(...args);
+console.log(add);  
+
+Using Spread Operator
+Spread Operator can be used for
+
+Concatenation of arrays
+var parts = ["shoulder", "knees"];
+var bodyParts = ["head", ...parts, "and", "toes"]; 
+console.log(bodyParts)
+Output : ["head","shoulder","knees","and","toes"]
+
+Math Functions
+    let numbers = [9, 4, 7, 1];
+    console.log(Math.max(...numbers));
+Output : 9
+
+Destructuring arrays and objects.
+let [x, y, z] = [1,2,3];           
+would mean x = 1, y = 2, z = 3
+let {x, y, z} = {x: 1, y: 2, z: 3};    
+would mean x = 1, y = 2, z = 3
+
+
+Practice Default Parameters
+function sum(x, y) {
+         return x+y;
+}
+Modify the above function to satisfy the following conditions
+
+sum(); // output => 5
+sum(2); // output => 5
+sum(2, 6); // output => 8
+
+Practice Spread Parameters
+function spreadParams(firstParam, secondParam, thirdParam) {
+     console.log(firstParam);
+     console.log(secondParam);
+     console.log(thirdParam);
+}
+spreadParams([1, 2, 3])
+Modify the function invocation to achieve the following output.
+
+firstParam => 1, secondParam => 2, thirdParam => 3

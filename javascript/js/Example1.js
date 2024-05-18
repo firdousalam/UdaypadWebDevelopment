@@ -1,0 +1,1 @@
+console.log("this log is getting called from JS file")

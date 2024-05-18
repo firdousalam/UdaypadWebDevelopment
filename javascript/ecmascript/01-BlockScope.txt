@@ -1,0 +1,96 @@
+Block Scope Variables
+
+Block is a group of zero or more statements delimited by a pair of curly brackets {}.
+Block scope variables are the ones that exist only within the innermost block that surrounds them.
+In JavaScript, var is used to create variables.
+ ES6, introduces 2 other keywords for declaring Block scope variables.
+let
+const
+
+Understanding Let
+let keyword in ES6 is used to create Block scope variables.
+
+It works like var, but differs in few aspects.
+
+Over next set of cards we will explore in detail about these differences.
+
+Function Definition
+JavaScript functions with multiple, single and no parameters
+
+ var add = function(x, y) { return x+y; }
+ var square = function(x) { return x*x;}
+ function sub() { return expression; } 
+ES6 Equivalent
+
+var add = (x, y) => { return x+y; }
+var square = (x) => { return x*x; }
+    OR
+var square = x => { return x*x; } 
+//Parantheses are optional for single parameter 
+var sub  = () => expression 
+//return and {} are optional for function with single statement.
+
+Let vs Var
+let doesn't allow properties to be added to the global (window) object.
+
+var x = 10;  
+console.log(window.x)     // 10
+let x = 10; 
+console.log(window.x)    //  undefined
+
+Let vs Var
+let provides Block scope rather than function /global scope.
+
+Using var:
+
+function sum([array of args]) {​​​​​​​​
+for(var i = 0; i < [array of args].length; i++) {​​​​​​​​
+// some code
+}​​​​​​​​
+// variable i is available here.
+}​​​​​​​​
+Using let:
+
+function sum([array of args]) {​​​​​​​​
+for(let i = 0; i < [array of args].length; i++) {​​​​​​​​
+// some code
+}​​​​​​​​
+// variable i is not available here.
+}
+
+Let vs Var
+let doesn't allow re-declaring a variable in global situation
+
+var x = 10;
+var x = 11;  
+console.log(x) // 11
+
+let x = 10;
+let x = 11; 
+// Uncaught SyntaxError: Identifier 'x' has already been declared
+
+Understanding Const
+const keyword is also used to declare Block Scope variables in ES6. These variables can not be changed once declared unlike let or var.
+
+let x = 10;                                           
+x = 20;
+// console.log(x) => 20 
+
+const x = 10;
+x = 20;
+//  Uncaught TypeError: Assignment to constant variable.
+
+Freeze
+Const make objects immutable, but it's value can still be modified. To prevent the modification and make object immutable, use the freeze() function.
+
+const x = { name: "Abc", age: 20 };
+x.age = 25;
+console.log(x);
+//{ name: 'Abc', age: 25 }
+ 
+const x = Object.freeze({ name: "Abc", age: 20 });
+x.age = 25;
+console.log(x);
+//{ name: 'Abc', age: 20 }
+
+
