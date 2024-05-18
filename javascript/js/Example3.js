@@ -1,0 +1,1 @@
+console.log("this log is from example3");
