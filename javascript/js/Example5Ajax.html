@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<div id="demo">
+<p>Let AJAX change this text.</p>
+<button type="button" onclick="loadDoc()">Change Content</button>
+    <br>
+    userId : <span id="userId"></span><br>
+    title : <span id="title"></span><br>
+    status : <span id="status"></span>
+</div>
+
+<script>
+
+//function loadDoc() {
+
+// Creating Our XMLHttpRequest object 
+let xhr = new XMLHttpRequest();
+
+// Making our connection  
+let url = 'https://jsonplaceholder.typicode.com/todos/1';
+xhr.open("GET", url, true);
+// what to change to make this code to accespt json
+
+// function execute after request is successful 
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log("resposne Data",typeof this.responseText);
+        console.log(this.responseText.title);
+        const obj = JSON.parse(this.responseText);
+        console.log("Title : ",obj.title);
+        document.getElementById("userId").innerHTML = obj.userId;
+        document.getElementById("title").innerHTML = obj.title;
+        document.getElementById("status").innerHTML = obj.completed;
+    }
+}
+// Sending our request 
+xhr.send();
+//}
+
+</script>
+
+</body>
+</html>

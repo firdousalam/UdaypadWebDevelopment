@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<script>
+function validateForm(e) {
+  e.preventDefault();
+  let x = document.forms["myForm"]["fname"].value;
+  document.getElementById("error").innerHTML= '';
+  if (x == "") {
+    document.getElementById("error").innerHTML="Name must be filled out";
+    return false;
+  }
+  console.log("form submiited")
+  //call some API to save this Data
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" onsubmit="return validateForm(event)" >
+  <p id="error"></p>
+  Name: <input type="text" name="fname" placeholder="Enter First Name">
+  <!--Name more that 6 char and less than 20
+  age number only 18 to 100
+  drop dowm
+  city  drop wown
+
+  pincode 6 gdigt number
+  mobile 10 digit no.
+  image required 
+-->
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html> 
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        desc {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1  name="desc" class="desc">Title</h1>
+    <p id="desc" name="desc" class="desc">this is my description</p>
+    <input type="text" id="myText" value=""/>
+    <p>
+      <h2>
+        third property
+      </h2>
+    </p>
+    
+        Id unique tags
+        class define same class name for varies element
+        name act like identity 
+        without providing the class we cannot access that element from js file
+    
+</body>
+</html>
+<script>
+   // let descVal = document.getElementById("desc").textContent;
+    // let descVal1 = document.getElementsByClassName("desc");
+    // let descVal2 = document.getElementsByName("desc");
+    // let descval3 = document.getElementsByTagName("p")
+    //console.log("class",descVal1);
+    //console.log(descVal);
+
+    let descVal = document.getElementById("desc").textContent.toUpperCase();
+    document.getElementById("myText").value = descVal;
+</script> -->
